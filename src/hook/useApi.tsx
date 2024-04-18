@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect, useRef } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 import axios, { AxiosRequestConfig, AxiosError } from 'axios';
 import { useApiStatus } from './useApiStatus';
 import { PENDING, SUCCESS, ERROR } from './constants/apiStatus';
