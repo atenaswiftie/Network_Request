@@ -7,6 +7,7 @@ import _ from 'lodash';
 
 const requestCache = new Map();
 
+
 interface UseApiConfig<TData, TError> extends AxiosRequestConfig {
   initialData?: TData;
   onSuccess?: (data: TData) => void;
@@ -15,7 +16,6 @@ interface UseApiConfig<TData, TError> extends AxiosRequestConfig {
   onCancel?: () => void;
   triggerOnMount?: boolean;
   pathParams?: Record<string, string | number>;
-  debounceDelay?: number;  // Debounce delay in milliseconds
 }
 
 export function useApi<TData = unknown, TError = unknown>(
@@ -30,7 +30,6 @@ export function useApi<TData = unknown, TError = unknown>(
     onCancel,
     pathParams,
     triggerOnMount = false,
-    debounceDelay = 300, 
     ...initialAxiosRequestConfig
   } = config;
 
